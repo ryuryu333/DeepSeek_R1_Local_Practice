@@ -1,0 +1,2 @@
+# DeepSeek_R1_Local_Practice
+DeepSeek-R1ローカル環境構築
