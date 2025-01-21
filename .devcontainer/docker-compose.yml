@@ -1,0 +1,11 @@
+services:
+  ollama_deepseek_r1_local:
+    build:
+      dockerfile: Dockerfile_Ollama
+    container_name: ollama_deepseek_r1_local
+    ports:
+      - "11434:11434" # ollama用
+    working_dir: /work
+    volumes:
+      - ../work:/work
+      - ../ollama:/root/.ollama # ollama用

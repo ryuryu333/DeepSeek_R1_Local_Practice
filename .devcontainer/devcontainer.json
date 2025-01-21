@@ -1,0 +1,25 @@
+{
+    //VScodeがコンテナに接続したときのタイトルを自由に設定
+    "name": "DeepSeek_R1_Local",
+    "dockerComposeFile": "docker-compose.yml",
+    //docker-conpose.ymlファイル内に記載したサービス名を指定
+    "service": "ollama_deepseek_r1_local",
+    //VScode接続時に開くフォルダを指定
+    "workspaceFolder": "/work",
+    //VScodeの環境を指定
+    "customizations": {
+        "vscode": {
+            //コンテナ作成時にインストールする拡張機能を記載
+            "extensions": [
+                //GitHub copilot
+                "GitHub.copilot",
+                "GitHub.copilot-chat"
+            ],
+            //VScodeの設定を記載
+            "settings": {
+                //ファイルのオートセーブ
+                "files.autoSave": "afterDelay"
+            }
+        }
+    }
+}
