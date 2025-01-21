@@ -3,9 +3,17 @@ services:
     build:
       dockerfile: Dockerfile_Ollama
     container_name: ollama_deepseek_r1_local
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
     ports:
       - "11434:11434" # ollama用
     working_dir: /work
     volumes:
       - ../work:/work
       - ../ollama:/root/.ollama # ollama用
+      

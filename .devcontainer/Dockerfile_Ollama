@@ -1,2 +1,3 @@
 FROM ollama/ollama
+# DockerHub ollama/ollama に準拠
 EXPOSE 11434
