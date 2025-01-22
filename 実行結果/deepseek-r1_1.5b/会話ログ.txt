@@ -1,0 +1,53 @@
+[5436 ms] Start: Run in container: /bin/sh -c ollama run deepseek-r1:1.5b
+pulling manifest
+pulling aabd4debf0c8... 100% ▕████████████████▏ 1.1 GB
+pulling 369ca498f347... 100% ▕████████████████▏  387 B
+pulling 6e4c38e1172f... 100% ▕████████████████▏ 1.1 KB
+pulling f4d24e9138dd... 100% ▕████████████████▏  148 B
+pulling a85fe2a2e58e... 100% ▕████████████████▏  487 B
+verifying sha256 digest
+writing manifest
+success
+>>> 日本語は話せますか？
+<think>
+
+</think>
+
+はい、日本語は spontaneously communication でatableです。
+
+>>> あなたについて教えて
+<think>
+
+</think>
+
+はい、 Anything 是の spontaneously communication でも transmitting です。
+
+>>> docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ol
+... lama このコマンドの意味を教えて
+<think>
+
+```bash
+# 命令の意味と分解：
+$docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama
+```
+
+### 分解：
+1. **`docker run`**:
+   - `--with-args` 或 `--source-files` は、`oolama:/root/.ollama` が使用され
+ます。
+2. **`-v` 或 `--version`**:
+   - `oolama:/root/.ollama` が `source/` マレgesに、`11434` が `name` と
+`version` に押 forwards します。
+3. **`-p source:node_name`**:
+   - `11434:11434` は、`source/` が `11434`, `node_name` が `ollama` です。
+
+
+### 解释：
+- 確実に `oolama:/root/.ollama ollama` は `source/11434:11434` 形式的に
+`\o/oo/oo/\o/\o` と interpreted します。
+- 具体的な `\o/oo/oo/\o/\o` 形式が `ollama` が使用されることを checked しま
+す。
+
+### 定期ically Update:
+- `docker pull source:11434` は、`source/11434` 上の `11434` 投手を更新しま
+す。
