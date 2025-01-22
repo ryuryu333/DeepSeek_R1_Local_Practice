@@ -5,10 +5,12 @@
     //docker-conpose.ymlファイル内に記載したサービス名を指定
     "service": "ollama_deepseek_r1_local",
     // コンテナ作成後に自動実行するコマンドを追加
-    // 最軽量1.5b、14b、32b、32bは20GBでGPUメモリを超える
+    // 最軽量1.5b、14b、32b、32bは20GBでGPUメモリ12GBを超える
     // "postStartCommand": "ollama run deepseek-r1:32b --verbose",
-    // 量子化モデルを試す、IQ2_Mも試したい
-    "postStartCommand": "ollama run hf.co/bartowski/DeepSeek-R1-Distill-Qwen-32B-GGUF:IQ2_S",
+    // 量子化モデルを試す、32b-IQ2_S、14b-Q5_K_L
+    // "postStartCommand": "ollama run hf.co/bartowski/DeepSeek-R1-Distill-Qwen-32B-GGUF:IQ2_S --verbose",
+    "postStartCommand": "ollama run hf.co/bartowski/DeepSeek-R1-Distill-Qwen-14B-GGUF:Q5_K_L --verbose",
+    
     //VScode接続時に開くフォルダを指定
     "workspaceFolder": "/work",
     //VScodeの環境を指定
