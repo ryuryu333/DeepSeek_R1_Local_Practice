@@ -16,4 +16,4 @@ services:
     volumes:
       - ../work:/work
       - ../ollama:/root/.ollama # ollama用
-      
+    
