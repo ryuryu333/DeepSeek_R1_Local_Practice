@@ -4,12 +4,17 @@
     "dockerComposeFile": "docker-compose.yml",
     //docker-conpose.ymlファイル内に記載したサービス名を指定
     "service": "ollama_deepseek_r1_local",
-    // コンテナ作成後に自動実行するコマンドを追加
-    // 最軽量1.5b、14b、32b、32bは20GBでGPUメモリ12GBを超える
-    // "postStartCommand": "ollama run deepseek-r1:32b --verbose",
-    // 量子化モデルを試す、32b-IQ2_S、14b-Q5_K_L
+
+    // 拡張機能以外のコンテナ設定が終わった後に実行
+    // 1.5bが最軽量、14bはGPUで動く、32bは20GBでGPUメモリ12GBを超える
+    // "postStartCommand": "ollama run deepseek-r1:14b --verbose",
+    // 他の量子化モデルを試す、32b-IQ2_S、14b-Q5_K_L、これらはGPUで動くがメモリがギリギリ
+    // 14b-Q4_K_L
     // "postStartCommand": "ollama run hf.co/bartowski/DeepSeek-R1-Distill-Qwen-32B-GGUF:IQ2_S --verbose",
-    "postStartCommand": "ollama run hf.co/bartowski/DeepSeek-R1-Distill-Qwen-14B-GGUF:Q5_K_L --verbose",
+    // "postStartCommand": "ollama run hf.co/bartowski/DeepSeek-R1-Distill-Qwen-14B-GGUF:Q5_K_L --verbose",
+    
+    // postStartCommandの実行後に実行
+    "postAttachCommand": ["echo", "Open WebUI is ready at http://localhost:3000/"],
     
     //VScode接続時に開くフォルダを指定
     "workspaceFolder": "/work",
