@@ -1,0 +1,63 @@
+The following is the Docker command. --- docker run -d --gpus=all -v ollama:/root/. docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama --- docker run -d --gpus=all -v Replace this command with Dockerfile and Dockercompose.
+
+GitHub Copilot
+ステップバイステップで計画を立てます:
+
+Dockerfile の作成
+
+NVIDIA Container Toolkit をベースに
+ollama のインストールと設定
+docker-compose.yml の作成
+
+GPU サポートの設定
+ボリュームとポートの設定
+以下が実装コードです:
+
+
+FROM nvidia/cuda:12.1.0-base-ubuntu22.04
+
+# システムの更新とツールのインストール
+RUN apt-get update && apt-get install -y \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# ollama のインストール
+RUN curl -L https://ollama.ai/download/ollama-linux-amd64 -o /usr/local/bin/ollama \
+    && chmod +x /usr/local/bin/ollama
+
+# 作業ディレクトリの設定
+WORKDIR /root
+
+# ollama サーバーの起動
+CMD ["ollama", "serve"]
+
+
+
+version: '3.8'
+
+services:
+  ollama:
+    build: .
+    container_name: ollama
+    volumes:
+      - ollama:/root/.ollama
+    ports:
+      - "11434:11434"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+volumes:
+  ollama:
+
+
+
+使用方法:
+
+docker compose up -d でコンテナを起動
+docker compose down で停止
+これにより、同じ機能を Dockerfile と docker-compose.yml で実現できます。

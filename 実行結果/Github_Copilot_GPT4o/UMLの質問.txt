@@ -1,0 +1,10 @@
+I am looking foard docker icon for UML. Please serch from this github repository. https://github.com/tupadr3/plantuml-icon-font-sprites
+
+GitHub
+(rerun without)
+I found multiple Docker UML icons in the repository tupadr3/plantuml-icon-font-sprites:
+
+docker.puml
+docker_wordmark.puml
+docker.puml (devicons2)
+You can view more details and additional results directly in the repository.

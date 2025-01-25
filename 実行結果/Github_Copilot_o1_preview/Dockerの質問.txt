@@ -1,0 +1,26 @@
+The following is the Docker command. --- docker run -d --gpus=all -v ollama:/root/. docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama --- docker run -d --gpus=all -v Replace this command with Dockerfile and Dockercompose.
+
+GitHub Copilot
+Dockerfileを作成してollama/ollamaイメージをベースにする
+docker-compose.yamlでポートマッピングやGPU、ボリュームを指定する
+
+FROM ollama/ollama
+# ...その他の設定...
+
+version: "3"
+services:
+  ollama:
+    build: .
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama:/root/.ollama
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
+volumes:
+  ollama:

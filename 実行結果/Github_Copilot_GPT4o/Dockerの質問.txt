@@ -1,0 +1,35 @@
+The following is the Docker command. --- docker run -d --gpus=all -v ollama:/root/. docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama --- docker run -d --gpus=all -v Replace this command with Dockerfile and Dockercompose.
+
+GitHub Copilot
+まず、Dockerfile を作成します。
+
+FROM ollama/ollama
+
+# 必要な設定やインストールがあればここに追加
+# ...
+
+CMD ["./start.sh"]  # 例として、コンテナ起動時に実行するコマンドを指定
+
+
+次に、docker-compose.yml を作成します。
+
+version: '3.8'
+
+services:
+  ollama:
+    build: .
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama:/root/.ollama
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+
+volumes:
+  ollama:
+
+これで、docker-compose up -d コマンドを実行することで、Docker Compose を使用してコンテナを起動できます。

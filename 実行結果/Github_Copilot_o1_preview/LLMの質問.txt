@@ -1,0 +1,4 @@
+I would like to discuss which LLM I should choose. My PC has 12GB of VRAM. The following two URLs describe different LLM models. https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-14B-GGUF https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-32B-GGUF --- --- --- --- --- --- . Each model is quantized in a different way. Please compare the models and narrow down which model will work with my PC's GPU. Then select the model that you think performs better. When thinking about it, please get the information detailed in the URL I just mentioned before you start selecting a model.
+
+GitHub Copilot
+14Bモデルなら12GB VRAMでもより安定して動作する可能性が高いです。32BモデルはVRAM要件が大きくなるため、快適に扱うのは難しそうです。性能重視なら32Bが優位ですが、実運用上は14Bを選択するのがおすすめです。

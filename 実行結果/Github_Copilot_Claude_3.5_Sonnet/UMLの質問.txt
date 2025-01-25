@@ -1,0 +1,22 @@
+I am looking foard docker icon for UML. Please serch from this github repository. https://github.com/tupadr3/plantuml-icon-font-sprites
+
+GitHub Copilot
+UMLでDockerアイコンを使用するための手順を説明します。
+
+tupadr3/plantuml-icon-font-spritesリポジトリから、Dockerアイコンを含むDevicons2フォントを使用します。
+PlantUMLファイルでDevicons2をインクルードし、Dockerアイコンを使用する方法を示します。
+以下のコードで使用できます：
+@startuml
+!define DEVICONS2 https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons2
+!include DEVICONS2/docker.puml
+
+skinparam defaultTextAlignment center
+
+rectangle "Docker Container" as container <<$docker>>
+@enduml
+このコードでは:
+
+DEVICONSリポジトリを参照
+dockerアイコンをインクルード
+rectangleにdockerアイコンを適用 (<<$docker>> 記法を使用)
+これでDockerアイコンを含むUML図が生成されます。他のDockerアイコンのバリエーションも使用可能です。

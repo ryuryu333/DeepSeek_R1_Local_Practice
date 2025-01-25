@@ -1,0 +1,13 @@
+I am looking foard docker icon for UML. Please serch from this github repository. https://github.com/tupadr3/plantuml-icon-font-sprites
+
+GitHub Copilot
+計画
+
+devops2スプライトにDockerアイコンが含まれている
+PlantUMLでの使用例を提示する
+@startuml
+!define DEVOPS2 https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/v2.0.0/devops2
+!include DEVOPS2/docker.puml
+
+Docker("example", "Docker Icon")
+@enduml
