@@ -1,4 +1,5 @@
-The following is the Docker command. --- docker run -d --gpus=all -v ollama:/root/. docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama --- docker run -d --gpus=all -v Replace this command with Dockerfile and Dockercompose.
+The following is the Docker command. --- docker run -d --gpus=all -v ollama:/root/. docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama --- Replace this command with Dockerfile and Dockercompose.
+
 
 GitHub Copilot
 ステップ 1: Dockerfile を作成します。
