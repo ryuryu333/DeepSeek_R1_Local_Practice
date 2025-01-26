@@ -1,0 +1,31 @@
+@startuml VSCode Docker Development Environment
+
+' カスタムスタイル
+skinparam rectangleFontColor black
+skinparam rectangleBackgroundColor #FFFFFF
+
+actor "User" as user
+rectangle "huggingface / ollama" as huggingface
+
+rectangle "VSCode Devcontainer" as vscodeDevcontainer {
+  rectangle "Docker" as docker {
+    node "ollama" as ollama {
+      port "11434" as ollamaPort
+      database "Ollama Volume\n(/root/.ollama)" as ollamaVolume
+      database "Work Volume\n(/work)" as workVolume
+    } 
+    node "open-webui" as webui {
+      port "8080:3000" as webuiPort
+    }
+  }
+  component terminal as terminal
+}
+
+' 接続関係
+user --> webuiPort : "http://localhost:3000/\nAccess"
+huggingface --> ollamaPort : "LLM download"
+webuiPort <--> ollamaPort
+user --> terminal
+terminal --> ollama : "LLM install\nollama run LLM_name"
+
+@enduml
